@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Flappy Game</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #70c5ce;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      flex-direction: column;
+    }
+
+    canvas {
+      border: 2px solid #000;
+      background: #70c5ce;
+      display: block;
+    }
+
+    #gameOver {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+      color: red;
+    }
+
+    #startScreen {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+      color: black;
+    }
+
+    #leaderboard {
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      font-size: 18px;
+      width: 200px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #leaderboard h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    #leaderboard ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #leaderboard li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas" width="400" height="600"></canvas>
+  <div id="gameOver" style="display:none;">Game Over! Press Space to Restart</div>
+  <div id="startScreen">Press Space to Start</div>
+  
+  <!-- Seção do Leaderboard (Top 10) -->
+  <div id="leaderboard">
+    <h2>Top 10 Scores</h2>
+    <ul id="scoreList">
+      <!-- Lista de pontuações será preenchida aqui -->
+    </ul>
+  </div>
+
+  <!-- Áudios -->
+  <audio id="jumpSound" src="jump.mp3"></audio>
+  <audio id="gameOverSound" src="gameover.mp3"></audio>
+
+  <script src="game.js"></script>
+</body>
+</html>
